@@ -10,10 +10,36 @@
     Lets get you insured!!
   </p>
   <p>
+
+      <ion-card>
+          <ion-card-header item-center>
+            Your Phone!
+          </ion-card-header>
+          <ion-list>
+              <ion-item>
+                  <ion-icon name="md-phone-portrait" item-start></ion-icon>
+                  <p>Manufacturer: {{device.manufacturer}}</p>
+              </ion-item>
+            <ion-item>
+                <ion-icon name="md-phone-portrait" item-start></ion-icon>
+                <p>Platform:  {{device.platform}}</p>
+            </ion-item>
+           
+            <ion-item>
+                <ion-icon name="md-phone-portrait" item-start></ion-icon>
+                <p>Model: {{device.model}}</p>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="md-phone-portrait" item-start></ion-icon>
+                <p>UUID: {{device.uuid}}</p>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="md-phone-portrait" item-start></ion-icon>
+                <p>Serial: {{device.serial}}</p>
+            </ion-item>
+            </ion-list>
+          </ion-card>
       <button ion-button color="secondary" (click)="goToChat()">Lets get started!</button>
-
-      Device:
-
-      {{ deviceInfo | json }}
+      
   </p>
 </ion-content>
