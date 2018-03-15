@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Device } from '@ionic-native/device';
+//import { HttpClientModule, HttpClient, HttpModule } from '@angular/common/http';
 
 
 import { AboutPage } from '../pages/about/about';
@@ -12,6 +13,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DialogflowHandlerProvider } from '../providers/dialogflow-handler/dialogflow-handler';
+import { ErrorHandlerProvider } from '../providers/error-handler/error-handler';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     Device,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DialogflowHandlerProvider,
+    ErrorHandlerProvider,
+//	  HttpClient,
+//	  HttpClientModule,
+	  
   ]
 })
 export class AppModule {}
