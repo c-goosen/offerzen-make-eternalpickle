@@ -7,11 +7,10 @@
 <ion-content padding>
   <!-- <h2>PickleSure</h2> -->
   <img src="../assets/imgs/rick-logo.svg" alt="pickle-rick!" class="pickle-rick">
-  
   <p class="home-text">
     <b>Keeping you out of a Pickle!</b>
   </p>
-  <p>
+  <!-- <p> -->
 
       <ion-card>
           <ion-card-header item-center>
@@ -35,13 +34,23 @@
                 <ion-icon name="md-phone-portrait" item-start></ion-icon>
                 <p>UUID: {{device.uuid}}</p>
             </ion-item>
-            <ion-item>
+            <!-- <ion-item>
                 <ion-icon name="md-phone-portrait" item-start></ion-icon>
                 <p>Serial: {{device.serial}}</p>
-            </ion-item>
+            </ion-item> -->
             </ion-list>
           </ion-card>
+          <div *ngFor="let item of rate | async" >
+            <ion-card>
+              <ion-item>
+                <ion-icon name="cash" item-start></ion-icon>
+              {{ item.package_name }} <ion-badge item-end>ZAR{{item.suggested_premium}}</ion-badge> 
+            </ion-item>
+            </ion-card>
+            </div>
       <button ion-button class="home-button" color="secondary" (click)="goToChat()">Lets get started!</button>
-      
-  </p>
+      <!-- {{ rate | async | json}} -->
+
+     
+  <!-- </p> -->
 </ion-content>
