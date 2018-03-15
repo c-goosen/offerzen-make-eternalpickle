@@ -34,7 +34,7 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-    this.rate = this.rootApi.GetPhoneEstimate("iPhone 7 Plus 256GB LTE");
+    this.rate = this.rootApi.GetPhoneEstimate(this.device.model);
 
     this.rootApi.GetPhoneEstimate(this.device.model).subscribe((data) => {
       console.log(JSON.stringify(data,null,4));
